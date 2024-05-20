@@ -1,4 +1,4 @@
-age org.rajalakshmi.graphicalprimitives
+package org.rajalakshmi.graphicalprimitives
 
 import android.content.Context
 import android.graphics.Canvas
