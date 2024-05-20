@@ -66,5 +66,83 @@ class MainActivity : AppCompatActivity() {
         btNine.setOnClickListener {
             tvExpression.setText("${tvExpression.text}9")
         }
+          btAddition.setOnClickListener{
+           if (tvExpression.getText().length!=0)
+           {
+               input1 = "${tvExpression.text}".toDouble()
+               addition = true
+               tvExpression.setText(null)
+           }
+       }
+       btSubtraction.setOnClickListener{
+           if (tvExpression.getText().length!=0)
+           {
+               input1 = "${tvExpression.text}".toDouble()
+               subtraction = true
+               tvExpression.setText(null)
+           }
+       }
+       btMultiplication.setOnClickListener{
+           if (tvExpression.getText().length!=0)
+           {
+               input1 = "${tvExpression.text}".toDouble()
+               multiplication = true
+               tvExpression.setText(null)
+           }
+       }
+       btDivision.setOnClickListener{
+           if (tvExpression.getText().length!=0)
+           {
+               input1 = "${tvExpression.text}".toDouble()
+               division = true
+               tvExpression.setText(null)
+           }
+       }
+       btEqualTo.setOnClickListener{
+           input2="${tvExpression.text}".toDouble()
+           if(addition)
+           {
+               tvExpression.setText("${input1}+${input2}")
+               var raddition:Double=input1+input2
+               tvResult.setText("${raddition}")
+               addition=false
+           }
+         if(subtraction)
+           {
+               tvExpression.setText("${input1}-${input2}")
+               var rsubtraction:Double=input1-input2
+               tvResult.setText("${rsubtraction}")
+               subtraction=false
+           }
+           if(multiplication)
+           {
+               tvExpression.setText("${input1}*${input2}")
+               var rmultiplication:Double=input1*input2
+               tvResult.setText("${rmultiplication}")
+               multiplication=false
+           }
+           if(division)
+           {
+               tvExpression.setText("${input1}/${input2}")
+               var rdivision:Double=input1/input2
+               tvResult.setText("${rdivision}")
+               division=false
+           }
+
+
+       }
+       btClear.setOnClickListener{
+           input1=0.0
+           input2=0.0
+           tvExpression.setText("")
+           tvResult.setText("")
+       }
+       btPoint.setOnClickListener{
+           if(!decimal)
+           {
+               tvExpression.setText("${tvExpression.text}.")
+           }
+           decimal=true
+       }
     }
 }
